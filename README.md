@@ -1,6 +1,8 @@
-# TwitchPopups
+# TwitchRacePredictions (WIP)
 
-Allows Twitch mods to display popup text on the stream via chat commands
+Allows chatters to predict quali/finishing positions in a race, and display it on screen, based on Twitch chat
+
+Based on [DaftLimmy's TwitchPopups](https://github.com/DaftLimmy/TwitchPopups)
 
 ## COMMAND LIST
 
