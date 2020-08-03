@@ -15,7 +15,7 @@ Based on [DaftLimmy's TwitchPopups](https://github.com/DaftLimmy/TwitchPopups)
 
 ## DOWNLOAD
 
-The latest version of TwitchRacePredictions can be found [as a zip archive here](https://github.com/alfredbulbasaur/TwitchRacePredictions/archive/master.zip)
+The latest version of TwitchRacePredictions can be found [as a zip archive here](https://github.com/ngreenan/TwitchRacePredictions/archive/master.zip)
 
 ## INSTRUCTIONS
 
