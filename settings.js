@@ -19,6 +19,6 @@ const twitchEmotes = true;
 // Allow duplicate predictions, can be true or false.
 // You probably don't want this to be true in practice, but
 // it can be handy to allow duplicates when testing.
-const allowDuplicates = true;
+const allowDuplicates = false;
 
 // Follow the instructions in README.md
