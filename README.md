@@ -6,29 +6,33 @@ Based on [DaftLimmy's TwitchPopups](https://github.com/DaftLimmy/TwitchPopups)
 
 ## COMMAND LIST
 
-- !alert: will display whatever text comes after the !alert command
-- !spotlight [@username]: will display the chat of the specified user from that point on
-- !delete: will delete the popup
+- !predictquali [positions]: will start a quali position prediction event, with valid responses being between 1st and the value of positions
+- !predictrace [positions]: will start a race position prediction event, with valid responses being between 1st and the value of positions, as well as a special case of DNF
+- !predictclose: will close the prediction event, e.g. when the race is actually happening
+- !predictresult [result]: will show the result and who predicted correctly/got closest to the actual result
+- !predict [prediction]: will add a prediction for the current prediction event
+- !predictend: will end the current prediction event
 
 ## DOWNLOAD
 
-The latest version of TwitchPopups can be found [as a zip archive here](https://github.com/DaftLimmy/TwitchPopups/archive/master.zip)
+The latest version of TwitchRacePredictions can be found [as a zip archive here](https://github.com/alfredbulbasaur/TwitchRacePredictions/archive/master.zip)
 
 ## INSTRUCTIONS
 
 1. Extract the zip archive
-2. Edit settings.js and change "Limmy" to your Twitch channel name
-3. Use OBS/Streamlabs OBS to add twitchpopups.htm as a browser source (Fit to Screen, 1920x1080)
+2. Edit settings.js and change "alfredbulbasaur" to your Twitch channel name
+3. Use OBS/Streamlabs OBS to add twitchracepredictions.htm as a browser source (Fit to Screen, 1920x1080)
 4. Tick "Shutdown source when not visible" in browser source properties. That way, any tweaks you make are reloaded when you toggle the visibility button
 
 ## UPGRADE
-1. Open your existing twitchpopups.htm and copy your configuration settings
+1. Open your existing twitchracepredictions.htm and copy your configuration settings
 2. Download the latest version
-3. Open the zip archive and open the TwitchPopups-master directory
-4. Select all of the files and drag them into your existing TwitchPopups directory. Say yes to any prompts to overwrite files but be careful not to overwrite your custom animations!
-5. Edit the configuration section at the top of twitchpopups.htm, pasting in your settings from step 1.
+3. Open the zip archive and open the TwitchRacePredictions-master directory
+4. Select all of the files and drag them into your existing TwitchRacePredictions directory. Say yes to any prompts to overwrite files but be careful not to overwrite your custom animations!
+5. Edit the configuration section at the top of twitchracepredictions.htm, pasting in your settings from step 1.
 6. If OBS hasn't recognized the update press the "refresh cache of current page" button in browser source properties.
 
+## STILL TO BE UPDATED
 
 ## ADVANCED: ADD CUSTOM HANDLERS
 If you want to add your own handlers, you will need to understand JavaScript and the tmi.js library.
@@ -72,6 +76,6 @@ Methods:
 
 `popup.showText(text, bgColour)`: Displays popup on screen with the given text and colour.
 
-`popup.delete()`: Removes popup from screen and resets state of all commands. 
+`popup.delete()`: Removes popup from screen and resets state of all commands.
 
 `popup.formatEmotes(message, emotes, upperCase)`: Formats text with emotes, This must be past only and all message un-formatted or emotes wont be replaced properly. e.g `popup.formatEmotes('Hello Twitch', context.emotes, true).substr(7)` The substr function removes the !command, just change the number to the length of the command.

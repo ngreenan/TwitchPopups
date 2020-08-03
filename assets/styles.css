@@ -1,3 +1,104 @@
+#predictionsbox {
+    display: inline-block;
+    height: 50px;
+    margin: 0px 25px;
+    width: 1870px;
+    opacity: 0;
+    border: 2px solid black;
+}
+
+#predictionmessage {
+    display: block;
+    font-family: 'Formula1';
+    font-size: 2em;
+    font-weight: bold;
+    color: white;
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: black;
+    margin: 10px 25px;
+    opacity: 0;
+}
+
+.predictionbar {
+    display: inline-block;
+    height: 0px;
+    background-color: white;
+    vertical-align: top;
+}
+
+.predictionpercent {
+    display: inline-block;
+    height: 1em;
+    /* background-color: white; */
+    font-family: 'Formula1';
+    font-size: 1em;
+    font-weight: bold;
+    color: white;
+    text-align: center;
+    margin-top: 4px;
+    line-height: 1em;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: black;
+}
+
+.predictionoption {
+    display: inline-block;
+    height: 50px;
+    font-family: "Formula1";
+    font-size: 2em;
+    font-weight: bold;
+    text-align: center;
+    line-height: 50px;
+}
+
+.predictionoption-1 {
+    background-color: #FFFFBF;
+}
+
+.predictionoption-2 {
+    background-color: #DFDFDF;
+}
+
+.predictionoption-3 {
+    background-color: #FFDF9F;
+}
+
+.predictionoption-topten {
+    background-color: #DFFFDF;
+}
+
+.predictionoption-other {
+    background-color: #CFCFFF;
+}
+
+.predictionoption-dnf {
+    background-color: #EFCFFF;
+}
+
+.winnertext-1 {
+    color: #FFFFBF;
+}
+
+.winnertext-2 {
+    color: #DFDFDF;
+}
+
+.winnertext-3 {
+    color: #FFDF9F;
+}
+
+.winnertext-topten {
+    color: #DFFFDF;
+}
+
+.winnertext-other {
+    color: #CFCFFF;
+}
+
+.winnertext-dnf {
+    color: #EFCFFF;
+}
+
 #popuptext {
     display: inline-block;
     font-family: 'Open Sans Condensed';
@@ -33,6 +134,7 @@ body {
     padding: 0;
     width: 100%;
     height: 100%;
+    background-color: grey;
 }
 
 #popuptext img {
