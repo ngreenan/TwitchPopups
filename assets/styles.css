@@ -13,8 +13,8 @@
     font-size: 2.25em;
     font-weight: bold;
     color: white;
-    -webkit-text-stroke-width: 0.2px;
-    -webkit-text-stroke-color: black;
+    /* -webkit-text-stroke-width: 0.2px; */
+    /* -webkit-text-stroke-color: black; */
     margin: 10px 25px;
     opacity: 0;
 }
@@ -37,8 +37,8 @@
     text-align: center;
     margin-top: 4px;
     line-height: 1em;
-    -webkit-text-stroke-width: 0.1px;
-    -webkit-text-stroke-color: black;
+    /* -webkit-text-stroke-width: 0.1px; */
+    /* -webkit-text-stroke-color: black; */
 }
 
 .predictionoption {
@@ -71,7 +71,7 @@
     background-color: #CFCFFF;
 }
 
-.predictionoption-dnf {
+.predictionoption-DNF {
     background-color: #EFCFFF;
 }
 
@@ -141,4 +141,16 @@ body {
     margin-bottom: -12px;
     margin-right: -7px;
     margin-left: -8px;
+}
+
+#background {
+	  position: absolute;
+    width: 100%;
+    top: 0px;
+    left: 0px;
+    margin-top: 5px;
+    margin-left: 5px;
+    margin-right: 5px;
+    background-color: rgba(0,0,0,0.7);
+    z-index: -10;
 }

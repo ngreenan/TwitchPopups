@@ -8,11 +8,12 @@ const popup = {
 
         $("#predictionmessage").css({ "opacity": 0 });
         $("#predictionsbox").css({ "opacity": 0 });
+		    $("#background").css({ "opacity": 0 });
 
         if (session === "quali") {
-            $("#predictionmessage").text("Where will I qualify? Type !predict followed by your prediction");
+            $("#predictionmessage").text("Where will I qualify? Type !predict followed by your prediction e.g. \"!predict 10\" for 10th");
         } else {
-            $("#predictionmessage").text("Where will I finish? Type !predict followed by your prediction");
+            $("#predictionmessage").text("Where will I finish? Type !predict followed by your prediction e.g. \"!predict 10\" for 10th");
         }
 
         var predictionoptions = predictionresults.length;
@@ -60,6 +61,9 @@ const popup = {
         $("#predictionsbox").animate({ "opacity": 1 }, 500);
         $("#predictionmessage").show();
         $("#predictionmessage").animate({ "opacity": 1 }, 500);
+    		$("#background").show();
+    		$("#background").height("260px");
+    		$("#background").animate({ "opacity": 1 }, 500);
     },
     /**
      * Updates the prediction bar to show the latest results
@@ -82,8 +86,10 @@ const popup = {
     closePredictions: () => {
 
         $("#predictionsbox").animate({ "opacity": 0 }, 500);
+		    $("#background").animate({ "height": "65px"}, 500);
         $("#predictionmessage").text("Predictions are closed! Stay tuned to see who was correct...");
         $("#predictionmessage").delay(10000).animate({ "opacity": 0 }, 500);
+		    $("#background").delay(9500).animate({ "opacity": 0 }, 500);
     },
     /**
      * Shows the final result and if anyone predicted correctly
@@ -149,6 +155,9 @@ const popup = {
         }
 
         $("#predictionmessage").animate({ "opacity": 1 }, 500);
+		    $("#background").animate({ "opacity": 1 }, 500);
+		    $("#background").height("65px");
+
         $("#predictionmessage").html("Result was <span class='" + colorclass + "'>" + resultText + "</span>. And the winner is...");
         // $("#predictionmessage").delay(5000).animate({ "opacity": 0 }, 500);
         // $("#predictionmessage").html(winnerText);
@@ -170,5 +179,6 @@ const popup = {
         $("#predictionsbox").empty();
         $("#predictionmessage").animate({ "opacity": 0 }, 500);
         $("#predictionsbox").animate({ "opacity": 0 }, 500);
+		    $("#background").animate({ "opacity": 0 }, 500);
     }
 }
