@@ -1,4 +1,4 @@
-var mode = "";
+var canPredict = 0;
 var predictions = []; //[name, prediction]
 var predictionresults = []; //[position, count, fraction]
 var average = 0;
@@ -17,6 +17,9 @@ actionHandlers['!predictquali'] = {
         // Initialise the arrays
         predictions = [];
         predictionresults = [];
+        
+        //open predictions
+        canPredict = 1;
 
         for (var i = 1; i <= textContent.substr(14); i++) {
             predictionresults.push([i, 0, 0]);
@@ -37,18 +40,21 @@ actionHandlers['!predictrace'] = {
     },
     handle: (context, textContent) => {
 
-      // Initialise the arrays
-      predictions = [];
-      predictionresults = [];
+        // Initialise the arrays
+        predictions = [];
+        predictionresults = [];
+        
+        // open predictions
+        canPredict = 1;
 
-      for (var i = 1; i <= textContent.substr(13); i++) {
-          predictionresults.push([i, 0, 0]);
-      }
+        for (var i = 1; i <= textContent.substr(13); i++) {
+            predictionresults.push([i, 0, 0]);
+        }
 
-      // Special case for race: DNF
-      predictionresults.push(['DNF',0, 0]);
+        // Special case for race: DNF
+        predictionresults.push(['DNF',0, 0]);
 
-      popup.showPredictions("race");
+        popup.showPredictions("race");
     }
 };
 
@@ -61,6 +67,10 @@ actionHandlers['!predictclose'] = {
         return context.mod || (context["badges-raw"] != null && context["badges-raw"].startsWith("broadcaster"))
     },
     handle: (context, textContent) => {
+        
+        // close predictions
+        canPredict = 0;
+        
         popup.closePredictions();
     }
 };
@@ -109,7 +119,7 @@ actionHandlers['!predict'] = {
     },
     handle: (context, textContent) => {
 
-        if (allowDuplicates || !itemInArray(predictions, context['display-name'], 0)) {
+        if (canPredict && (allowDuplicates || !itemInArray(predictions, context['display-name'], 0))) {
 
             var prediction = textContent.substr(9);
 
