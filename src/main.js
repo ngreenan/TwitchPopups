@@ -24,9 +24,9 @@ function onMessageHandler(target, context, msg, self) {
 
     let handlerName;
     if (command.indexOf(" ") > -1) {
-        handlerName = command.substring(0, command.indexOf(" "));
+        handlerName = command.substring(0, command.indexOf(" ")).toLowerCase();
     } else {
-        handlerName = command;
+        handlerName = command.toLowerCase();
     }
 
     console.log(handlerName);
